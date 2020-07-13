@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间处理</title>
+</head>
+<script type="text/javascript" language="javascript">
+    window.onload = init;
+
+    function init(){
+        btnClick();
+        btnmouseOver();
+        inputDbClick();
+    }
+
+    function btnmouseOver(){
+        var btnCancel = document.getElementById("btnCancel");
+        btnCancel.onmouseover = btnmouseOver;
+        var flag;//tag
+
+        flag = confirm("你把鼠标移动到了Cancel上");
+        if(flag == true)
+        {
+            window.alert("你选者了确定");
+        }else{
+            window.alert("你选者了取消");
+        }
+
+    }
+
+    function inputDbClick(){
+        var inputSubmit = document.getElementById("inputSubmit");
+        inputSubmit.ondblclick = inputDbClick;
+        window.prompt("你是男生还是女生","男生")
+    }
+
+    function btnClick(){
+        var btnOK = document.getElementById("btnOK");
+        btnOK.onclick = btnClick;
+        window.alert("你点击了OK");
+    }
+</script>
+<style>
+    #btnOK{
+        color: red;
+    }
+    button{
+        font-size: 20px;
+    }
+</style>
+<body>
+    <button id="btnClick()">OK</button>
+    <button id="btnCancel">Cancel</button>
+    <input id="inputSubmit" type = "button" value = "Submit"/>
+</body>
+</html>

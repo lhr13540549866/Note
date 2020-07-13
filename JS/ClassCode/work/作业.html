@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幻灯片效果</title>
+</head>
+<script>
+    window.onload = init;
+    var imga,imgb,imgc,imgd;
+    var li1,li2,li3,li4;
+    function init(){
+        imga = document.getElementById("imga");
+        imgb = document.getElementById("imgb");
+        imgc = document.getElementById("imgc");
+        imgd = document.getElementById("imgd");
+        li1 = document.getElementById("li1");
+        li2 = document.getElementById("li2");
+        li3 = document.getElementById("li3");
+        li4 = document.getElementById("li4");
+        li1.onclick = li1;
+        li2.onclick = li2;
+        li3.onclick = li3;
+        li4.onclick = li4;
+    }
+        var cnt = 0;
+        function  switchImage(){
+            switch(cnt % 5){
+                case 0 :imga.style.display = "block";
+                        imgb.style.display = "none";
+                        imgc.style.display = "none";
+                        imgd.style.display = "none";
+                        break;
+                case 1 :imga.style.display = "none";
+                        imgb.style.display = "block";
+                        imgc.style.display = "none";
+                        imgd.style.display = "none";
+                        break;
+                case 2 :imga.style.display = "none";
+                        imgb.style.display = "none";
+                        imgc.style.display = "block";
+                        imgd.style.display = "none";
+                        break;
+                case 3 :imga.style.display = "none";
+                        imgb.style.display = "none";
+                        imgc.style.display = "none";
+                        imgd.style.display = "block";
+                        break;
+            }
+            cnt++;
+        }
+        window.setInterval(switchImage,3000);
+        function lic(){
+            var lohir;
+            lohir = event.srcElement ? event.srcElement : event.target;
+            if(lohir === li1){
+                    imga.style.display = "block";
+                    imgb.style.display = "none";
+                    imgc.style.display = "none";
+                    imgd.style.display = "none";
+            }else if(lohir === li2){
+                    imga.style.display = "none";
+                    imgb.style.display = "block";
+                    imgc.style.display = "none";
+                    imgd.style.display = "none";
+            }else if(lohir === li3){
+                    imga.style.display = "none";
+                    imgb.style.display = "none";
+                    imgc.style.display = "block";
+                    imgd.style.display = "none"; 
+            }else{
+                    imga.style.display = "none";
+                    imgb.style.display = "none";
+                    imgc.style.display = "none";
+                    imgd.style.display = "block";
+            }
+        }    
+</script>
+<style>
+    #imga{
+        display:block;
+    }
+    #imgb{
+        display:none;
+    }
+    #imgc{
+        display:none;
+    }
+    #imgd{
+        display:none;
+    }
+    li{float: left;}
+    .img{
+            width:550px;
+            height:250px;
+        }
+</style>
+<body>
+<div>
+    <img id="imga" src="图片/02.jpg" class="img"/>
+    <img id="imgb" src="图片/03.jpg" class="img"/>
+    <img id="imgc" src="图片/04.jpg" class="img"/>
+    <img id="imgd" src="图片/07.jpg" class="img"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;<li id="lia"></li><li id="lib"></li><li id="lic"></li><li id="lid"></li>
+</div>
+</body>
+</html>

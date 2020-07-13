@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //函数：是一段能实现特定功能的代码
+    //两个角色：调用者与被调用者
+    //参数：调用者给被调用者的数据
+    //返回值：被调用者完成功能后给回调用读者的数据
+    //透明：被调用者实现过程对调用者透明
+    //zhouZN()：充话费
+    window.onload = init;
+    //初始化
+    //形式参数：定义时
+    //实际参数：调用时
+    //实参为形参传值
+    //类名首字母大写，下划线分割
+    //arguments typeof jQuery
+    function init(){
+        var inv = zhouZN(200,"13540549866",5);
+        window.alert("领导：本月话费报销金额：" + inv.amout + "元");
+    }
+    //发票的构造函数：amout：金额，phNum：号码
+    function Invoice(amout,phNum){
+        this.amount = amount;
+        this.phNum = phNum;
+    }
+    //var zhouZN = function(){
+    //};
+    //充话费    money：话费，必须   phNum：号码，必须   tip：跑路费，可选
+    function zhouZN(money,phNum,tip){
+        //函数体
+        console.log("我周某人跑步去利州广场充话费");
+        var inv =new Invoice(money,phNum);
+        return inv;
+    }
+    //1.课堂代码
+    //2.自己设定一个问题，自定义函数解决
+</script>
+<body>
+    
+</body>
+</html>
